@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         manager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
     }
 
@@ -45,8 +46,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             (-degree).toFloat(), Animation.RELATIVE_TO_SELF, 0.5f,
             Animation.RELATIVE_TO_SELF, 0.5f)
 
-        rotationAnimation.duration = 210
+        rotationAnimation.duration = 150
         rotationAnimation.fillAfter = true
+        currentDegree = -degree
         imDegree.startAnimation(rotationAnimation)
     }
 }
